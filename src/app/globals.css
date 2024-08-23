@@ -17,3 +17,15 @@ a {
 html {
   scroll-behavior: smooth;
 }
+/* Add this to your global CSS file */
+.menu-transition {
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.menu-transition.open {
+  max-height: 300px; /* Adjust this value based on your menu's height */
+  opacity: 1;
+}
