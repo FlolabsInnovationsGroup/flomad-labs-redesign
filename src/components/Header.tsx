@@ -21,22 +21,31 @@ const Header = () => {
   }
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black bg-opacity-70' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-white">Flomad Labs R&D</Link>
+        <nav className="hidden md:block">
+          <ul className="flex space-x-6">
+            <li><Link href="/" className="text-white hover:text-blue-400 transition-colors">Home</Link></li>
+            <li><Link href="#focus" className="text-white hover:text-blue-400 transition-colors">Our Focus</Link></li>
+            <li><Link href="#about" className="text-white hover:text-blue-400 transition-colors">About</Link></li>
+            <li><Link href="#contact" className="text-white hover:text-blue-400 transition-colors">Contact</Link></li>
+          </ul>
+        </nav>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-white focus:outline-none">
             {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
-        <nav className={`absolute md:relative top-full left-0 right-0 bg-black md:bg-transparent menu-transition ${isMenuOpen ? 'open' : ''} md:block`}>
-          <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 p-4 md:p-0">
-            <li><Link href="/" className="text-white hover:text-blue-400 transition-colors block" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
-            <li><Link href="#focus" className="text-white hover:text-blue-400 transition-colors block" onClick={() => setIsMenuOpen(false)}>Our Focus</Link></li>
-            <li><Link href="#about" className="text-white hover:text-blue-400 transition-colors block" onClick={() => setIsMenuOpen(false)}>About</Link></li>
-            <li><Link href="#contact" className="text-white hover:text-blue-400 transition-colors block" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
-          </ul>
-        </nav>
+      </div>
+      {/* Mobile menu */}
+      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-gray-900`}>
+        <ul className="px-4 py-2">
+          <li><Link href="/" className="block py-2 text-white hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+          <li><Link href="#focus" className="block py-2 text-white hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Our Focus</Link></li>
+          <li><Link href="#about" className="block py-2 text-white hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>About</Link></li>
+          <li><Link href="#contact" className="block py-2 text-white hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
+        </ul>
       </div>
     </header>
   )
