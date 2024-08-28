@@ -20,7 +20,7 @@ const Footer = () => {
           <h4 className="font-semibold mb-2">Follow Us</h4>
           <div className="flex space-x-4">
             <a href="#" className="text-2xl hover:text-blue-400"><FaTwitter /></a>
-            <a href="#" className="text-2xl hover:text-blue-400"><FaLinkedin /></a>
+            <a href="https://www.linkedin.com/company/flomad-labs-r-d/" className="text-2xl hover:text-blue-400"><FaLinkedin /></a>
             <a href="#" className="text-2xl hover:text-blue-400"><FaGithub /></a>
           </div>
         </div>
