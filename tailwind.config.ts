@@ -22,10 +22,10 @@ const config: Config = {
         textPrimary: '#333333', // Text color in light mode
         darkTextPrimary: '#e5e5e5', // Text color in dark mode
         buttonHover: '#2a7f88', // Hover color for buttons
-        cardBackground: '#ffffff', // Light mode card background
-        darkCardBackground: '#2a2a2a', // Dark mode card background
+        cardBackground: '#f8f8f8', // Lighter card background for light mode
+        darkCardBackground: '#333333', // Darker card background for dark mode
         highlight: '#3c3c3c', // Subtle highlight for dark mode backgrounds
-        mutedText: '#6b7280', // Muted text color for light mode
+        mutedText: '#4A4A4A',  // Darker text for better readability in light mode
         darkMutedText: '#9A9A9A', // Muted text color for dark mode
         gradientStart: '#eef5f8', // Gradient start for light mode
         gradientEnd: '#bce7e6', // Gradient end for light mode
@@ -36,7 +36,7 @@ const config: Config = {
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
-        serif: ['Merriweather', 'serif'], // Added serif fallback for headings
+        serif: ['Playfair Display', 'serif'], // Elegant serif font for headers
       },
       fontSize: {
         'xs': '0.75rem',
@@ -45,10 +45,10 @@ const config: Config = {
         'lg': '1.125rem',
         'xl': '1.25rem',
         '2xl': '1.5rem',
-        '3xl': '1.875rem',
-        '4xl': '2.25rem',
-        '5xl': '3rem',
-        '6xl': '3.75rem',
+        '3xl': '1.75rem',
+        '4xl': '2.0rem',
+        '5xl': '2.5rem',
+        '6xl': '3rem',
       },
       spacing: {
         '4': '1rem',
@@ -74,8 +74,8 @@ const config: Config = {
         header: '0 4px 10px rgba(0, 0, 0, 0.1)',
         soft: '0 2px 6px rgba(0, 0, 0, 0.15)',
         intense: '0 10px 30px rgba(0, 0, 0, 0.3)',
-        hover: '0px 4px 8px rgba(0, 0, 0, 0.2)', // Subtle hover shadow
-        button: '0px 2px 10px rgba(0, 0, 0, 0.1)', // Slight button shadow on hover
+        hover: '0px 4px 8px rgba(0, 0, 0, 0.2)',
+        button: '0px 2px 10px rgba(0, 0, 0, 0.1)',
       },
       opacity: {
         '10': '0.1',
@@ -87,7 +87,7 @@ const config: Config = {
       transitionTimingFunction: {
         'ease-in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
         'ease-bounce': 'cubic-bezier(0.68, -0.55, 0.27, 1.55)',
-        'ease-in': 'cubic-bezier(0.42, 0, 1, 1)', // Smoother transition
+        'ease-in': 'cubic-bezier(0.42, 0, 1, 1)',
       },
       maxWidth: {
         'screen-xl': '1280px',

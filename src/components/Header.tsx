@@ -28,32 +28,48 @@ const Header = ({ toggleDarkMode, isDarkMode }: HeaderProps) => {
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-                isScrolled ? 'bg-darkBackground shadow-lg' : 'bg-darkBackground bg-opacity-80'
+                isScrolled ? 'bg-darkBackground bg-opacity-90 shadow-lg' : 'bg-darkBackground bg-opacity-80'
             }`}
             aria-label="Main Navigation"
         >
-            <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div className="container mx-auto px-6 py-4 flex justify-between items-center space-x-6">
                 {/* Logo with hover effect */}
                 <Link
                     href="/"
-                    className="text-3xl font-bold text-white hover:text-accent transition-transform duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="text-2xl font-serif text-white hover:text-accent transition-transform duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-accent"
                     aria-label="Go to Home"
                 >
                     Flomad Labs R&D
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:flex items-center space-x-8">
-                    <Link href="/" className="nav-link text-white hover:text-accent transition-colors" aria-label="Go to Home">
+                <nav className="hidden md:flex items-center space-x-6">
+                    <Link
+                        href="/"
+                        className="nav-link text-white hover:text-accent transition-colors"
+                        aria-label="Go to Home"
+                    >
                         Home
                     </Link>
-                    <Link href="#focus" className="nav-link text-white hover:text-accent transition-colors" aria-label="Go to Our Focus">
+                    <Link
+                        href="#focus"
+                        className="nav-link text-white hover:text-accent transition-colors"
+                        aria-label="Go to Our Focus"
+                    >
                         Our Focus
                     </Link>
-                    <Link href="#about" className="nav-link text-white hover:text-accent transition-colors" aria-label="Go to About">
+                    <Link
+                        href="#about"
+                        className="nav-link text-white hover:text-accent transition-colors"
+                        aria-label="Go to About"
+                    >
                         About
                     </Link>
-                    <Link href="#contact" className="nav-link text-white hover:text-accent transition-colors" aria-label="Go to Contact">
+                    <Link
+                        href="#contact"
+                        className="nav-link text-white hover:text-accent transition-colors"
+                        aria-label="Go to Contact"
+                    >
                         Contact
                     </Link>
 
@@ -144,8 +160,3 @@ const Header = ({ toggleDarkMode, isDarkMode }: HeaderProps) => {
 };
 
 export default Header;
-
-
-
-
-

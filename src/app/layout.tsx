@@ -10,7 +10,7 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-    const [isDarkMode, setIsDarkMode] = useState(true); // Set dark mode as default
+    const [isDarkMode, setIsDarkMode] = useState(true); // Default to dark mode
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme');
@@ -56,6 +56,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </html>
     );
 }
+
+
+
 
 
 

@@ -30,4 +30,3 @@ const DarkModeToggle = ({ isDarkMode, toggleDarkMode }: DarkModeToggleProps) => 
 };
 
 export default DarkModeToggle;
-

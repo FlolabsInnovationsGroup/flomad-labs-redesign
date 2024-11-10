@@ -16,55 +16,46 @@ export default function Home() {
             <section
                 id="hero"
                 aria-label="Hero Section"
-                className="bg-background text-textPrimary dark:bg-darkBackground dark:text-darkTextPrimary py-12 md:py-16 lg:py-20"
+                className="bg-background text-textPrimary dark:bg-darkBackground dark:text-darkTextPrimary py-8 md:py-12 lg:py-16 transition-all duration-300"
             >
                 <Hero />
             </section>
-
-            {/* Divider with gradient for smooth transition */}
-            <div className="bg-gradient-to-b from-background to-gray-100 dark:from-darkBackground dark:to-gray-800 h-4 md:h-6 transition-all duration-300 ease-in-out"></div>
 
             {/* Main Focus Section */}
             <section
                 id="focus"
                 aria-labelledby="focus-title"
-                className="bg-background text-textPrimary dark:bg-darkBackground dark:text-darkTextPrimary py-16 md:py-20 lg:py-24"
+                className="bg-background text-textPrimary dark:bg-darkBackground dark:text-darkTextPrimary py-8 md:py-12 lg:py-16 transition-all duration-300"
             >
                 <h2 id="focus-title" className="sr-only">Main Focus</h2>
                 <MainFocus />
             </section>
 
-            {/* Divider with gradient for smooth transition */}
-            <div className="bg-gradient-to-b from-gray-100 to-background dark:from-gray-800 dark:to-darkBackground h-4 md:h-6 transition-all duration-300 ease-in-out"></div>
-
             {/* About Section */}
             <section
                 id="about"
                 aria-labelledby="about-title"
-                className="bg-background text-textPrimary dark:bg-darkBackground dark:text-darkTextPrimary py-16 md:py-20 lg:py-24"
+                className="bg-background text-textPrimary dark:bg-darkBackground dark:text-darkTextPrimary py-8 md:py-12 lg:py-16 transition-all duration-300"
             >
                 <h2 id="about-title" className="sr-only">About Us</h2>
                 <About />
             </section>
 
-            {/* Divider with gradient for smooth transition */}
-            <div className="bg-gradient-to-b from-background to-gray-100 dark:from-darkBackground dark:to-gray-800 h-4 md:h-6 transition-all duration-300 ease-in-out"></div>
-
             {/* Technologies Section */}
             <section
                 id="technologies"
                 aria-labelledby="technologies-title"
-                className="bg-background text-textPrimary dark:bg-darkBackground dark:text-darkTextPrimary py-16 md:py-20 lg:py-24"
+                className="bg-background text-textPrimary dark:bg-darkBackground dark:text-darkTextPrimary py-8 md:py-12 lg:py-16 transition-all duration-300"
             >
                 <h2 id="technologies-title" className="sr-only">Technologies</h2>
                 <Technologies />
             </section>
 
-            {/* CTA Section (optional) */}
+            {/* CTA Section */}
             <section
                 id="cta"
                 aria-labelledby="cta-title"
-                className="bg-primary text-white py-16 md:py-20 lg:py-24 text-center"
+                className="bg-primary text-white py-8 md:py-12 lg:py-16 text-center transition-all duration-300"
             >
                 <h2 id="cta-title" className="text-4xl font-extrabold mb-6">
                     Ready to Explore Our Innovations?
@@ -77,6 +68,8 @@ export default function Home() {
         </main>
     );
 }
+
+
 
 
 

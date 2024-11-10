@@ -75,7 +75,7 @@ body.dark .hero-overlay {
   @apply relative z-10 text-white text-center max-w-3xl px-4 sm:px-8;
   padding-top: 4rem; /* Adjust to avoid header overlap */
   margin-bottom: 0; /* Ensure no margin between hero and next section */
-  min-height: 80vh; /* Make hero section visually impactful */
+  min-height: 60vh; /* Adjust hero section to not feel too bulky */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Add text shadow for better visibility */
 }
 
@@ -243,6 +243,7 @@ section + section {
     @apply flex-col items-center; /* Stack footer items vertically on small screens */
   }
 }
+
 
 
 
