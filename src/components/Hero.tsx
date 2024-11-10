@@ -1,45 +1,45 @@
-'use client'
-
-import { useState, useEffect } from 'react'
+'use client';
 
 const Hero = () => {
-  const [isMuted, setIsMuted] = useState(true)
+    return (
+        <section
+            id="home"
+            className="relative flex items-center justify-center overflow-hidden py-16 sm:py-20 md:py-24 mx-auto w-full" // Adjusted padding for spacing and center alignment
+            aria-label="Hero Section"
+        >
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute w-full h-full object-cover"
+                poster="/video.mp4-poster.jpg" // Optional: Add a poster image for better loading performance
+            >
+                <source src="/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
 
-  useEffect(() => {
-    const video = document.querySelector('video')
-    if (video) {
-      video.muted = isMuted
-    }
-  }, [isMuted])
+            {/* Content Section */}
+            <div className="relative z-10 text-center text-white max-w-4xl px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+                <h1 className="text-5xl sm:text-6xl font-extrabold mb-6 text-shadow-md">
+                    Transforming Tomorrow with Advanced AI and Robotics
+                </h1>
+                <p className="text-xl sm:text-2xl font-medium mb-10">
+                    Pioneering breakthrough technologies that reshape industries and elevate human potential.
+                </p>
+                <a
+                    href="#focus"
+                    role="button"
+                    className="inline-block px-8 py-4 bg-primary text-white font-bold rounded-full shadow-lg hover:bg-buttonHover dark:bg-blue-600 dark:text-white dark:hover:bg-blue-500 transition-colors duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-accent"
+                    aria-label="Explore our innovations"
+                >
+                    Explore Our Innovations
+                </a>
+            </div>
+        </section>
+    );
+};
 
-  return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute w-full h-full object-cover"
-      >
-        <source src="/video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-      <div className="relative z-10 text-center text-white max-w-3xl px-4 sm:px-8">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-4">Flomad Labs R&D</h1>
-        <p className="text-lg sm:text-xl mb-8">AI and Robotics research and development collective</p>
-        <a href="#focus" className="inline-block px-6 py-3 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition-colors">
-          Discover Our Focus
-        </a>
-      </div>
-      <button
-        onClick={() => setIsMuted(!isMuted)}
-        className="absolute bottom-4 right-4 z-20 text-white text-2xl"
-      >
-        {isMuted ? '🔇' : '🔊'}
-      </button>
-    </section>
-  )
-}
+export default Hero;
 
-export default Hero
+
