@@ -2,30 +2,254 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Body and Text Styling */
 body {
-  @apply text-gray-900;
+  @apply text-textPrimary bg-pageBackground transition-colors duration-300;
+  margin: 0; /* Ensure no extra space on the body */
+}
+body.dark {
+  @apply bg-darkPageBackground text-darkTextPrimary; /* Dark mode for entire body */
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply font-bold;
+/* Main Content Area */
+main {
+  @apply bg-contentBackground dark:bg-darkContentBackground transition-colors duration-300;
+  padding: 0 1rem; /* Adjust padding to prevent excess */
+  margin: 0;
+  min-height: 100vh; /* Ensure the body fills the screen */
 }
 
+/* Section Styling */
+section {
+  @apply bg-contentBackground dark:bg-darkContentBackground text-textPrimary dark:text-darkTextPrimary transition-colors duration-300;
+  padding: 2rem 0; /* Adds padding */
+  margin-top: 0 !important;  /* Ensures no margin above each section */
+  margin-bottom: 0 !important; /* Ensures no margin below each section */
+}
+
+/* Remove extra margin between sections */
+section + section {
+  margin-top: 0 !important; /* Remove margin between sections */
+}
+
+/* Header and Navigation Styling */
+header {
+  @apply bg-gray-900 text-white;
+  padding: 1rem 0; /* Add padding for the header */
+}
+body.dark header {
+  @apply bg-darkBackground text-white;
+}
+.nav-link {
+  @apply text-white hover:text-accent transition-colors;
+}
+body.dark .nav-link {
+  @apply text-gray-300 hover:text-accent;
+}
+
+/* Link Styling */
 a {
-  @apply transition-colors duration-300;
+  @apply text-primary transition-colors duration-300;
+}
+a:hover {
+  @apply text-accent;
+}
+body.dark a {
+  @apply text-accent;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Hero Section */
+.hero-overlay {
+  @apply absolute inset-0 bg-black bg-opacity-60;
 }
-/* Add this to your global CSS file */
-.menu-transition {
-  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
+body.dark .hero-overlay {
+  @apply bg-black bg-opacity-70;
+}
+.hero-content {
+  @apply relative z-10 text-white text-center max-w-3xl px-4 sm:px-8;
+  padding-top: 4rem; /* Adjust to avoid header overlap */
+  margin-bottom: 0; /* Ensure no margin between hero and next section */
+  min-height: 80vh; /* Make hero section visually impactful */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Add text shadow for better visibility */
 }
 
-.menu-transition.open {
-  max-height: 300px; /* Adjust this value based on your menu's height */
+/* Button Styling */
+.btn {
+  @apply px-6 py-3 bg-primary text-white font-semibold rounded-full transition-transform duration-300;
+}
+.btn:hover {
+  @apply bg-buttonHover transform scale-105;
+}
+
+/* Focus Section Styling */
+.focus-section {
+  @apply py-20 bg-gradient-to-r from-gradientStart to-gradientEnd text-white;
+}
+body.dark .focus-section {
+  @apply bg-gradient-to-r from-darkGradientStart to-darkGradientEnd text-darkTextPrimary;
+}
+.focus-card {
+  @apply relative h-80 rounded-lg overflow-hidden shadow-focusCard transition-transform duration-300 hover:scale-105;
+}
+.focus-card img {
+  @apply absolute inset-0 w-full h-full object-cover;
+}
+.focus-card-overlay {
+  @apply absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6 text-white opacity-0 transition-opacity duration-300;
+}
+body.dark .focus-card-overlay {
+  @apply bg-gray-800 bg-opacity-60;
+}
+.group:hover .focus-card-overlay {
   opacity: 1;
 }
+.focus-icon {
+  @apply text-accent text-4xl mb-4;
+}
+.focus-card-title {
+  @apply text-2xl font-bold mb-2;
+}
+.focus-card-subtext {
+  @apply text-center;
+}
+
+/* About Section Styling */
+.about-section {
+  @apply py-20 bg-cardBackground text-textPrimary;
+}
+body.dark .about-section {
+  @apply bg-darkCardBackground text-darkTextPrimary;
+}
+.about-card {
+  @apply bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300;
+}
+body.dark .about-card {
+  @apply bg-darkCardBackground text-gray-300;
+}
+.about-card img {
+  @apply w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105;
+}
+.about-card-title {
+  @apply text-xl font-bold mb-2;
+}
+.about-card-excerpt {
+  @apply text-mutedText mb-4;
+}
+body.dark .about-card-excerpt {
+  @apply text-darkMutedText;
+}
+.learn-more {
+  @apply text-primary hover:underline;
+}
+body.dark .learn-more {
+  @apply text-accent;
+}
+
+/* Technologies Section Styling */
+.technologies-section {
+  @apply py-20 bg-contentBackground text-textPrimary;
+}
+body.dark .technologies-section {
+  @apply bg-darkContentBackground text-darkTextPrimary;
+}
+.technologies-title {
+  @apply text-3xl sm:text-4xl font-bold mb-4 text-center;
+}
+.technologies-subtitle {
+  @apply text-center text-mutedText mb-8;
+}
+body.dark .technologies-subtitle {
+  @apply text-darkMutedText;
+}
+.technology-card {
+  @apply bg-cardBackground rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300;
+}
+body.dark .technology-card {
+  @apply bg-darkCardBackground;
+}
+.technology-card img {
+  @apply w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105;
+}
+.technology-card-title {
+  @apply text-xl font-bold mb-2;
+}
+.technology-card-description {
+  @apply text-mutedText;
+}
+body.dark .technology-card-description {
+  @apply text-darkMutedText;
+}
+
+/* Footer Section Styling */
+footer {
+  @apply bg-gray-900 text-white py-8;
+}
+body.dark footer {
+  @apply bg-darkCardBackground text-darkTextPrimary;
+}
+.footer-container {
+  @apply container mx-auto px-4 flex flex-wrap justify-between items-center;
+}
+.footer-title {
+  @apply text-xl font-bold;
+}
+.footer-links a {
+  @apply text-white hover:text-primary transition-colors;
+}
+body.dark .footer-links a {
+  @apply text-gray-300 hover:text-accent;
+}
+.footer-social-icons {
+  @apply flex space-x-4;
+}
+.footer-social-icons a {
+  @apply text-2xl hover:text-primary;
+}
+body.dark .footer-social-icons a {
+  @apply hover:text-accent;
+}
+
+/* General Styles and Shadows */
+.shadow-subtle:hover {
+  @apply shadow-soft;
+}
+.card-hover:hover {
+  @apply transform scale-105;
+}
+
+/* Remove extra margins between sections */
+section + section {
+  margin-top: 0 !important; /* Remove margin between sections */
+}
+
+/* Responsive Design: Adjust for smaller screens */
+@media (max-width: 640px) {
+  .focus-section {
+    @apply py-12; /* Adjust padding for smaller screens */
+  }
+  .about-section {
+    @apply py-12; /* Adjust padding for smaller screens */
+  }
+  .technologies-section {
+    @apply py-12; /* Adjust padding for smaller screens */
+  }
+  .footer-container {
+    @apply flex-col items-center; /* Stack footer items vertically on small screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
