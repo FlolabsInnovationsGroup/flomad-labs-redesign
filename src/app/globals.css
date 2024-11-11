@@ -77,6 +77,9 @@ body.dark .hero-overlay {
   margin-bottom: 0; /* Ensure no margin between hero and next section */
   min-height: 60vh; /* Adjust hero section to not feel too bulky */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Add text shadow for better visibility */
+  white-space: nowrap; /* Prevent the hero text from wrapping */
+  overflow: hidden; /* Prevent overflow issues */
+  text-align: center; /* Ensure text is centered */
 }
 
 /* Button Styling */
@@ -243,6 +246,7 @@ section + section {
     @apply flex-col items-center; /* Stack footer items vertically on small screens */
   }
 }
+
 
 
 
