@@ -1,11 +1,12 @@
-import type { Metadata } from 'next'
+import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import { Inter } from 'next/font/google';
+import Script from 'next/script';
+import './globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
@@ -52,21 +53,36 @@ export const metadata: Metadata = {
     yandex: 'd0220e7dd75c564c',
     // yahoo: 'your-yahoo-verification-code',
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Y57R92JN9B"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Y57R92JN9B');
+          `}
+        </Script>
+      </head>
       <body className={inter.className}>
         <Header />
         <main>{children}</main>
         <Footer />
-        <Analytics />
+        <Analytics /> {/* Vercel Analytics */}
       </body>
     </html>
-  )
+  );
 }
